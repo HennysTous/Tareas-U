@@ -1,0 +1,61 @@
+CREATE TABLE Alumno
+(
+  Matricula VARCHAR(10) NOT NULL,
+  Nombre VARCHAR(30) NOT NULL,
+  Grupo INT NOT NULL,
+  PRIMARY KEY (Matricula)
+);
+
+CREATE TABLE Examen
+(
+  Fecha DATE NOT NULL,
+  Npreguntas INT NOT NULL,
+  N° INT NOT NULL,
+  PRIMARY KEY (N°)
+);
+
+CREATE TABLE Practica
+(
+  Dificultad VARCHAR(10) NOT NULL,
+  Titulo INT NOT NULL,
+  P# INT NOT NULL,
+  PRIMARY KEY (P#)
+);
+
+CREATE TABLE Profesor
+(
+  CC INT NOT NULL,
+  Nombre VARCHAR(30) NOT NULL,
+  PRIMARY KEY (CC)
+);
+
+CREATE TABLE Alumno-Examen
+(
+  Nota FLOAT NOT NULL,
+  Matricula VARCHAR(10) NOT NULL,
+  N° INT NOT NULL,
+  PRIMARY KEY (Matricula, N°),
+  FOREIGN KEY (Matricula) REFERENCES Alumno(Matricula),
+  FOREIGN KEY (N°) REFERENCES Examen(N°)
+);
+
+CREATE TABLE Alumno-Practica
+(
+  Nota FLOAT NOT NULL,
+  Fecha DATE NOT NULL,
+  Matricula VARCHAR(10) NOT NULL,
+  P# INT NOT NULL,
+  PRIMARY KEY (Matricula, P#),
+  FOREIGN KEY (Matricula) REFERENCES Alumno(Matricula),
+  FOREIGN KEY (P#) REFERENCES Practica(P#)
+);
+
+CREATE TABLE Profesor-Practica
+(
+  Fecha DATE NOT NULL,
+  P# INT NOT NULL,
+  CC INT NOT NULL,
+  PRIMARY KEY (P#, CC),
+  FOREIGN KEY (P#) REFERENCES Practica(P#),
+  FOREIGN KEY (CC) REFERENCES Profesor(CC)
+);
