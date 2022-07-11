@@ -73,19 +73,13 @@ public class mainCola {
                     System.out.println(ColaCliente);
                     break;
 
-                /*case 5:
+                case 5:
                     System.out.println("Ingrese el nombre del cliente que desea mostrar");
-                    String element = sc.next();
-                    Iterator<ClienteCola> it = ColaCliente.iterator();
-
-                    while (it.hasNext()) {
-                        ClienteCola obj = it.next();
-                        if (obj.getName().equalsIgnoreCase(ColaCliente.)) {
-                            System.out.println("El cliente "+tonum2+ " esta en la posicion "+.);
-                            break;
-                        }
+                    String elemento = sc.next();
+                    if(ColaCliente.contains(elemento)){
+                    System.out.println()
+                    
                     }
-                    break;*/
 
                 case 6:
                     break;
