@@ -3,32 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Colas;
+package Pilas;
 
 /**
  *
  * @author tf2he
  */
-public class ClienteCola {
-
+public class ClientePila {
+    
     private String nombre;
-
     private int indice;
 
-    ClienteCola() {
-
+    public ClientePila() {
     }
 
-    public ClienteCola(String nombre, int indice) {
+    public ClientePila(String nombre, int indice) {
         this.nombre = nombre;
         this.indice = indice;
     }
 
-    public String getName() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setName(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -40,8 +38,11 @@ public class ClienteCola {
         this.indice = indice;
     }
 
+    @Override
     public String toString() {
-        return "\n Student nombre: " + nombre + "  Token num: " + indice;
+        return "\n ClientePila{" + "nombre=" + nombre + ", indice=" + indice + '}';
     }
-
+    
+    
+    
 }
