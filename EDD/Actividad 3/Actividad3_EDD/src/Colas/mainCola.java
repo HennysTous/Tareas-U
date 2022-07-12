@@ -44,7 +44,8 @@ public class mainCola {
                 case 1:
                     System.out.println("Ingrese el nombre del cliente");
                     indice++;
-                    ColaCliente.add(new ClienteCola(sc.next(), indice));
+                    cc.setIndice(indice);
+                    ColaCliente.add(new ClienteCola(sc.next(), cc.getIndice()));
 
                     System.out.println("Nueva cola: ");
                     System.out.println(ColaCliente);
@@ -63,10 +64,12 @@ public class mainCola {
                         ClienteCola obj = itr.next();
                         if (obj.getIndice() == tonum) {
                             ColaCliente.remove(obj);
-                            indice--;
+                           
                             break;
                         }
                     }
+                    System.out.println("Nueva cola: ");
+                    System.out.println(ColaCliente);
                     break;
                 case 4:
                     System.out.println("El numero de clientes total es: " + ColaCliente.size());
@@ -76,9 +79,15 @@ public class mainCola {
                 case 5:
                     System.out.println("Ingrese el nombre del cliente que desea mostrar");
                     String elemento = sc.next();
-                    if(ColaCliente.contains(elemento)){
-                    System.out.println()
-                    
+                    Iterator<ClienteCola> it = ColaCliente.iterator();
+
+                    while (it.hasNext()) {
+                        ClienteCola obj = it.next();
+                        if (obj.getName().equalsIgnoreCase(elemento)) {
+                            System.out.println("El cliente "+elemento+" esta en la posicion " +obj.getIndice());
+                           
+                            break;
+                        }
                     }
 
                 case 6:
