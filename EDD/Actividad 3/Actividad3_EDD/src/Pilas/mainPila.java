@@ -8,6 +8,7 @@ package Pilas;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 /**
  *
@@ -26,12 +27,9 @@ public class mainPila {
 
         ClientePila cp = new ClientePila();
         ArrayDeque<ClientePila> PilaCliente = new ArrayDeque<ClientePila>();
-        Iterator<ClientePila> itr = PilaCliente.iterator();
-        Iterator<ClientePila> ditr = PilaCliente.descendingIterator();
-        System.out.println(PilaCliente);
 
         while (true) {
-            System.out.println("Por favor, elija una opcion \n");
+            System.out.println("\n Por favor, elija una opcion \n");
             System.out.println("Para insertar un cliente nuevo, ingrese 1 \n");
             System.out.println("Para eliminar el primer cliente, presione 2 \n");
             System.out.println("Para eliminar el ultimo cliente, presione 3  \n");
@@ -45,7 +43,7 @@ public class mainPila {
             System.out.println("Para agregar varios clientes, ingrese 11\n");
             System.out.println("Para eliminar varios clientes, ingrese 12\n");
             System.out.println("Para verificar si un cliente esta en la lista, ingrese 13\n");
-            System.out.println("Para salir del sistema, ingrese .");
+            System.out.println("Para salir del sistema, ingrese 14 \n");
             opt = sc.nextInt();
 
             switch (opt) {
@@ -79,27 +77,27 @@ public class mainPila {
                 case 5:
                     System.out.println("Ingrese el nombre del cliente que desea mostrar");
                     String elemento = sc.next();
-
+                    Iterator<ClientePila> itr = PilaCliente.iterator();
                     while (itr.hasNext()) {
                         ClientePila obj = itr.next();
                         if (obj.getNombre().equalsIgnoreCase(elemento)) {
                             System.out.println("El cliente " + elemento + " esta en la posicion " + obj.getIndice());
 
-                            break;
                         }
                     }
-
+                    break;
                 case 6:
                     System.out.println("Ingrese el indice del cliente que desea mostrar");
                     int id = sc.nextInt();
-                    while (itr.hasNext()) {
-                        ClientePila obj = itr.next();
+                    Iterator<ClientePila> itr2 = PilaCliente.iterator();
+                    while (itr2.hasNext()) {
+                        ClientePila obj = itr2.next();
                         if (obj.getIndice() == id) {
                             System.out.println("El cliente que se encuentra en la posicion " + id + " se llama " + obj.getNombre());
 
-                            break;
                         }
                     }
+                    break;
                 case 7:
                     if (PilaCliente.isEmpty() == true) {
                         System.out.println("La pila esta vacia");
@@ -113,16 +111,16 @@ public class mainPila {
 
                 case 8:
                     System.out.println("Esta es la pila de clientes del primero al ultimo");
-
-                    while (itr.hasNext()) {
-                        System.out.println(itr.next());
+                    Iterator<ClientePila> itr3 = PilaCliente.iterator();
+                    while (itr3.hasNext()) {
+                        System.out.println(itr3.next());
                     }
 
                     break;
 
                 case 9:
                     System.out.println("Esta es la pila de clientes del ultimo al primero");
-
+                    Iterator<ClientePila> ditr = PilaCliente.descendingIterator();
                     while (ditr.hasNext()) {
                         System.out.println(ditr.next());
                     }
@@ -134,10 +132,48 @@ public class mainPila {
                     break;
 
                 case 11:
+
+                    ArrayDeque<ClientePila> nuevapila = new ArrayDeque<ClientePila>();
+                    indice++;
+                    cp.setIndice(indice);
+                    nuevapila.add(new ClientePila("Rigoberto", cp.getIndice()));
+                    indice++;
+                    cp.setIndice(indice);
+                    nuevapila.add(new ClientePila("Eugenio", cp.getIndice()));
+                    indice++;
+                    cp.setIndice(indice);
+                    nuevapila.add(new ClientePila("Calmando", cp.getIndice()));
+
+                    PilaCliente.addAll(nuevapila);
+
+                    System.out.println("Nueva cola: ");
+                    System.out.println(PilaCliente);
+                    break;
+
                 case 12:
+                    System.out.println("Ingrese el indice inicial a eliminar");
+                    int ind1 = sc.nextInt();
+                    System.out.println("Ingrese el indice final a eliminar");
+                    int ind2 = sc.nextInt();
+                    Predicate<ClientePila> condition = n -> n.getIndice() >= ind1 && n.getIndice() <= ind2;
+                    PilaCliente.removeIf(condition);
+                    break;
+
                 case 13:
+                    System.out.println("Ingrese el nombre del cliente que desea verificar");
+                    String nom = sc.next();
+                    Iterator<ClientePila> itr4 = PilaCliente.iterator();
+                    while (itr4.hasNext()) {
+                        ClientePila obj = itr4.next();
+                        if (obj.getNombre().equalsIgnoreCase(nom)) {
+                            System.out.println("El cliente " + nom + " si esta en la cola");
+
+                        }
+                    }
+                    break;
                 case 14:
-             
+                    System.exit(0);
+                    break;
 
             }
 

@@ -41,7 +41,7 @@ public class ClienteCola {
     }
 
     public String toString() {
-        return "\n Student nombre: " + nombre + "  Token num: " + indice;
+        return "Student nombre: " + nombre + "  Token num: " + indice;
     }
 
 }

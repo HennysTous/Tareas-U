@@ -10,7 +10,7 @@ package Pilas;
  * @author tf2he
  */
 public class ClientePila {
-    
+
     private String nombre;
     private int indice;
 
@@ -40,9 +40,7 @@ public class ClientePila {
 
     @Override
     public String toString() {
-        return "\n ClientePila{" + "nombre=" + nombre + ", indice=" + indice + '}';
+        return "ClientePila{" + "nombre=" + nombre + ", indice=" + indice + '}';
     }
-    
-    
-    
+
 }

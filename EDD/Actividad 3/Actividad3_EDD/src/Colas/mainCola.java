@@ -28,8 +28,8 @@ public class mainCola {
 
         ClienteCola cc = new ClienteCola();
         Queue<ClienteCola> ColaCliente = new LinkedList<ClienteCola>();
-        Iterator<ClienteCola> itr = ColaCliente.iterator();
-        System.out.println(ColaCliente+"\n");
+
+        System.out.println(ColaCliente + "\n");
 
         while (true) {
 
@@ -66,14 +66,12 @@ public class mainCola {
                 case 3:
                     System.out.println("Ingrese el indice de cliente que desea borrar");
                     int tonum = sc.nextInt();
-                    
-
+                    Iterator<ClienteCola> itr = ColaCliente.iterator();
                     while (itr.hasNext()) {
                         ClienteCola obj = itr.next();
                         if (obj.getIndice() == tonum) {
                             ColaCliente.remove(obj);
-                           
-                            break;
+
                         }
                     }
                     System.out.println("Nueva cola: ");
@@ -87,59 +85,63 @@ public class mainCola {
                 case 5:
                     System.out.println("Ingrese el nombre del cliente que desea mostrar");
                     String elemento = sc.next();
-                    
-                    while (itr.hasNext()) {
-                        ClienteCola obj = itr.next();
+                    Iterator<ClienteCola> itr2 = ColaCliente.iterator();
+                    while (itr2.hasNext()) {
+                        ClienteCola obj = itr2.next();
                         if (obj.getName().equalsIgnoreCase(elemento)) {
-                            System.out.println("El cliente "+elemento+" esta en la posicion " +obj.getIndice());
-                           
-                            break;
+                            System.out.println("El cliente " + elemento + " esta en la posicion " + obj.getIndice());
+
                         }
                     }
+                    break;
                 case 7:
-                    if(ColaCliente.isEmpty() == true){
-                    System.out.println("La cola esta vacia");
-                    
-                    }else{
-                    System.out.println("La cola no esta vacia");
-                    System.out.println(ColaCliente);
-                    
+                    if (ColaCliente.isEmpty() == true) {
+                        System.out.println("La cola esta vacia");
+
+                    } else {
+                        System.out.println("La cola no esta vacia");
+                        System.out.println(ColaCliente);
+
                     }
                     break;
                 case 8:
                     Queue<ClienteCola> nuevacola = new LinkedList<ClienteCola>();
                     indice++;
                     cc.setIndice(indice);
+
                     nuevacola.add(new ClienteCola("Rigoberto", cc.getIndice()));
                     indice++;
                     cc.setIndice(indice);
+
                     nuevacola.add(new ClienteCola("Eugenio", cc.getIndice()));
                     indice++;
                     cc.setIndice(indice);
+
                     nuevacola.add(new ClienteCola("Calmando", cc.getIndice()));
-                    
+
                     ColaCliente.addAll(nuevacola);
-                    
+
                     System.out.println("Nueva cola: ");
                     System.out.println(ColaCliente);
                     break;
                 case 6:
-                     System.out.println("Ingrese el indice del cliente que desea mostrar");
-                    int id = sc.nextInt();  
-                    while (itr.hasNext()) {
-                        ClienteCola obj = itr.next();
-                        if (obj.getIndice()==id) {
-                            System.out.println("El cliente que se encuentra en la posicion "+id+" se llama "+obj.getName());
-                           
-                            break;
+                    System.out.println("Ingrese el indice del cliente que desea mostrar");
+                    Iterator<ClienteCola> itr3 = ColaCliente.iterator();
+                    int id = sc.nextInt();
+                    while (itr3.hasNext()) {
+                        ClienteCola obj = itr3.next();
+                        if (obj.getIndice() == id) {
+                            System.out.println("El cliente que se encuentra en la posicion " + id + " se llama " + obj.getName());
+
                         }
                     }
+                    break;
                 case 9:
                     System.out.println("Ingrese el indice inicial a eliminar");
-                    int ind1 =sc.nextInt();
+                    int ind1 = sc.nextInt();
                     System.out.println("Ingrese el indice final a eliminar");
-                    int ind2 =sc.nextInt();
-                    Predicate<ClienteCola> condition = n->n.getIndice()>=ind1 && n.getIndice()<=ind2;
+                    int ind2 = sc.nextInt();
+                    Predicate<ClienteCola> condition = n -> n.getIndice() >= ind1 && n.getIndice() <= ind2;
                     ColaCliente.removeIf(condition);
                     break;
                 case 10:
@@ -147,25 +149,25 @@ public class mainCola {
                     System.out.println("Primer cliente eliminado");
                     System.out.println("Nueva cola: ");
                     System.out.println(ColaCliente);
-                   break; 
-                    
-                case 11:  
+                    break;
+
+                case 11:
                     ColaCliente.clear();
                     System.out.println("La cola ha sido vaciada");
                     break;
-               /* case 12:
-                    System.out.println("Ingrese el nombre del cliente a buscar");
-                    String nombre = sc.next();
-                  
-                    if(ColaCliente.contains(new ClienteCola(nombre))){
-                    System.out.println("El cliente si esta en la cola");
-                    
+                case 12:
+                    System.out.println("Ingrese el nombre del cliente que desea verificar");
+                    String nom = sc.next();
+                    Iterator<ClienteCola> itr4 = ColaCliente.iterator();
+                    while (itr4.hasNext()) {
+                        ClienteCola obj = itr4.next();
+                        if (obj.getName().equalsIgnoreCase(nom)) {
+                            System.out.println("El cliente " + nom + " si esta en la cola");
+
+                        }
                     }
-                    
                     break;
-                    */
-                    
-                    
+
                 case 13:
                     System.exit(0);
                     break;
