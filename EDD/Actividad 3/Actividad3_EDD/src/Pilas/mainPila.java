@@ -25,36 +25,119 @@ public class mainPila {
         int indice = 0;
 
         ClientePila cp = new ClientePila();
-        ArrayDeque<ClientePila> ColaCliente = new ArrayDeque<ClientePila>();
-        System.out.println(ColaCliente);
+        ArrayDeque<ClientePila> PilaCliente = new ArrayDeque<ClientePila>();
+        Iterator<ClientePila> itr = PilaCliente.iterator();
+        Iterator<ClientePila> ditr = PilaCliente.descendingIterator();
+        System.out.println(PilaCliente);
 
         while (true) {
             System.out.println("Por favor, elija una opcion \n");
             System.out.println("Para insertar un cliente nuevo, ingrese 1 \n");
-            System.out.println("Para ver cual cliente esta en frente, ingrese 2 \n");
-            System.out.println("Para sacar a un cliente, ingrese 3 \n");
+            System.out.println("Para eliminar el primer cliente, presione 2 \n");
+            System.out.println("Para eliminar el ultimo cliente, presione 3  \n");
             System.out.println("Para contar la cantidad de clientes, ingrese 4 \n");
-            System.out.println("Para verificar si el nombre de un cliente esta en la cola, ingrese 5 \n");
+            System.out.println("Para buscar un cliente por su nombre, ingrese 5 \n");
             System.out.println("Para buscar un cliente por su indice, ingrese 6 \n");
-            System.out.println("Para verificar si la cola esta vacia, ingrese 7 \n");
-            System.out.println("Para ingresar nuevos clientes, ingrese 8\n");
-            System.out.println("Para borrar varios clientes, ingrese 9\n");
+            System.out.println("Para verificar si la pila esta vacia, ingrese 7 \n");
+            System.out.println("Para mostrar los clientes desde el primero hasta el ultimo, ingrese 8\n");
+            System.out.println("Para mostrar los clientes desde el ultimo hasta el primero, ingrese 9\n");
             System.out.println("Para borrar todos los clientes, ingrese 10\n");
-            System.out.println("Para salir del sistema, ingrese 11.");
+            System.out.println("Para agregar varios clientes, ingrese 11\n");
+            System.out.println("Para eliminar varios clientes, ingrese 12\n");
+            System.out.println("Para verificar si un cliente esta en la lista, ingrese 13\n");
+            System.out.println("Para salir del sistema, ingrese .");
             opt = sc.nextInt();
 
             switch (opt) {
                 case 1:
+                    System.out.println("Ingrese el nombre del cliente");
+                    indice++;
+                    cp.setIndice(indice);
+                    PilaCliente.add(new ClientePila(sc.next(), cp.getIndice()));
+
+                    System.out.println("Nueva cola: ");
+                    System.out.println(PilaCliente);
+                    break;
                 case 2:
+                    Object primcli = PilaCliente.removeFirst();
+                    System.out.println("Primer cliente eliminado " + primcli.toString());
+                    System.out.println("Nueva pila: ");
+                    System.out.println(PilaCliente);
+                    break;
+
                 case 3:
+                    Object ulticli = PilaCliente.removeLast();
+                    System.out.println("Ultimo cliente eliminado " + ulticli.toString());
+                    System.out.println("Nueva pila: ");
+                    System.out.println(PilaCliente);
+                    break;
+
                 case 4:
+                    System.out.println("El tamaño de la pila es " + PilaCliente.size());
+                    break;
+
                 case 5:
+                    System.out.println("Ingrese el nombre del cliente que desea mostrar");
+                    String elemento = sc.next();
+
+                    while (itr.hasNext()) {
+                        ClientePila obj = itr.next();
+                        if (obj.getNombre().equalsIgnoreCase(elemento)) {
+                            System.out.println("El cliente " + elemento + " esta en la posicion " + obj.getIndice());
+
+                            break;
+                        }
+                    }
+
                 case 6:
+                    System.out.println("Ingrese el indice del cliente que desea mostrar");
+                    int id = sc.nextInt();
+                    while (itr.hasNext()) {
+                        ClientePila obj = itr.next();
+                        if (obj.getIndice() == id) {
+                            System.out.println("El cliente que se encuentra en la posicion " + id + " se llama " + obj.getNombre());
+
+                            break;
+                        }
+                    }
                 case 7:
+                    if (PilaCliente.isEmpty() == true) {
+                        System.out.println("La pila esta vacia");
+
+                    } else {
+                        System.out.println("La pila no esta vacia");
+                        System.out.println(PilaCliente);
+
+                    }
+                    break;
+
                 case 8:
+                    System.out.println("Esta es la pila de clientes del primero al ultimo");
+
+                    while (itr.hasNext()) {
+                        System.out.println(itr.next());
+                    }
+
+                    break;
+
                 case 9:
+                    System.out.println("Esta es la pila de clientes del ultimo al primero");
+
+                    while (ditr.hasNext()) {
+                        System.out.println(ditr.next());
+                    }
+
+                    break;
                 case 10:
+                    PilaCliente.clear();
+                    System.out.println("La pila ha sido vaciada");
+                    break;
+
                 case 11:
+                case 12:
+                case 13:
+                case 14:
+             
 
             }
 

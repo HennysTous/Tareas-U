@@ -29,7 +29,7 @@ public class mainCola {
         ClienteCola cc = new ClienteCola();
         Queue<ClienteCola> ColaCliente = new LinkedList<ClienteCola>();
         Iterator<ClienteCola> itr = ColaCliente.iterator();
-        System.out.println(ColaCliente);
+        System.out.println(ColaCliente+"\n");
 
         while (true) {
 
@@ -38,13 +38,15 @@ public class mainCola {
             System.out.println("Para ver cual cliente esta en frente, ingrese 2 \n");
             System.out.println("Para sacar a un cliente, ingrese 3 \n");
             System.out.println("Para contar la cantidad de clientes, ingrese 4 \n");
-            System.out.println("Para verificar si el nombre de un cliente esta en la cola, ingrese 5 \n");
+            System.out.println("Para buscar un cliente por su nombre, ingrese 5 \n");
             System.out.println("Para buscar un cliente por su indice, ingrese 6 \n");
             System.out.println("Para verificar si la cola esta vacia, ingrese 7 \n");
             System.out.println("Para ingresar nuevos clientes, ingrese 8\n");
             System.out.println("Para borrar varios clientes, ingrese 9\n");
-            System.out.println("Para borrar todos los clientes, ingrese 10\n");
-            System.out.println("Para salir del sistema, ingrese 11.");
+            System.out.println("Para borrar el primer cliente, ingrese 10\n");
+            System.out.println("Para borrar todos los clientes, ingrese 11\n");
+            System.out.println("Para verificar si un cliente esta en la cola, ingrese 12\n");
+            System.out.println("Para salir del sistema, ingrese 13.");
             opt = sc.nextInt();
             switch (opt) {
                 case 1:
@@ -86,7 +88,6 @@ public class mainCola {
                     System.out.println("Ingrese el nombre del cliente que desea mostrar");
                     String elemento = sc.next();
                     
-
                     while (itr.hasNext()) {
                         ClienteCola obj = itr.next();
                         if (obj.getName().equalsIgnoreCase(elemento)) {
@@ -95,7 +96,7 @@ public class mainCola {
                             break;
                         }
                     }
-                case 8:
+                case 7:
                     if(ColaCliente.isEmpty() == true){
                     System.out.println("La cola esta vacia");
                     
@@ -105,7 +106,7 @@ public class mainCola {
                     
                     }
                     break;
-                case 7:
+                case 8:
                     Queue<ClienteCola> nuevacola = new LinkedList<ClienteCola>();
                     indice++;
                     cc.setIndice(indice);
@@ -142,12 +143,30 @@ public class mainCola {
                     ColaCliente.removeIf(condition);
                     break;
                 case 10:
+                    ColaCliente.poll();
+                    System.out.println("Primer cliente eliminado");
+                    System.out.println("Nueva cola: ");
+                    System.out.println(ColaCliente);
+                   break; 
                     
+                case 11:  
                     ColaCliente.clear();
                     System.out.println("La cola ha sido vaciada");
                     break;
+               /* case 12:
+                    System.out.println("Ingrese el nombre del cliente a buscar");
+                    String nombre = sc.next();
+                  
+                    if(ColaCliente.contains(new ClienteCola(nombre))){
+                    System.out.println("El cliente si esta en la cola");
                     
-                case 11:
+                    }
+                    
+                    break;
+                    */
+                    
+                    
+                case 13:
                     System.exit(0);
                     break;
             }
