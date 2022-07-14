@@ -53,7 +53,7 @@ public class mainPila {
                     cp.setIndice(indice);
                     PilaCliente.add(new ClientePila(sc.next(), cp.getIndice()));
 
-                    System.out.println("Nueva cola: ");
+                    System.out.println("Nueva pila: ");
                     System.out.println(PilaCliente);
                     break;
                 case 2:
@@ -146,7 +146,7 @@ public class mainPila {
 
                     PilaCliente.addAll(nuevapila);
 
-                    System.out.println("Nueva cola: ");
+                    System.out.println("Nueva pila: ");
                     System.out.println(PilaCliente);
                     break;
 
@@ -166,7 +166,7 @@ public class mainPila {
                     while (itr4.hasNext()) {
                         ClientePila obj = itr4.next();
                         if (obj.getNombre().equalsIgnoreCase(nom)) {
-                            System.out.println("El cliente " + nom + " si esta en la cola");
+                            System.out.println("El cliente " + nom + " si esta en la pila");
 
                         }
                     }
