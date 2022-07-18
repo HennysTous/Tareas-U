@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+   
+}
+
+h1 {
+    font-size: 3.5em
+}
+
+h2 {
+    font-size: 2.7em
+}
+
+h3 {
+    font-size: 2em
+}
+
+p {
+    font-size: 1.25em;
+}
+
+button {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: rgb(107, 107, 255);
+}
+
+button:hover {
+
+    background-color: rgb(79, 79, 255);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.color-acento {
+    color: rgb(134, 134, 255);
+
+}
+
+header {
+    background-color: rgb(240, 240, 240);
+    padding-bottom: 20px;
+}
+
+header .logo {
+    margin: 0;
+    padding: 25px;
+
+    font-weight: bold;
+    color: rgb(107, 107, 255);
+    font-size: 1.5em;
+    text-align: center;
+}
+
+header .container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+header a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 600;
+    color: black;
+
+}
+
+header a:hover {
+    color: rgb(107, 107, 255);
+
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 600px;
+
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url(imagenes/que-es-un-disenador-grafico-la-creatividad-es-clave.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#hero h1 {
+
+    color: white;
+}
+
+#definicion {
+
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.7)), url(imagenes/Diseño-gráfico.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#definicion h2 {
+    text-align: center;
+    color: white;
+}
+
+#definicion p {
+    padding: 20px 60px;
+    text-align: justify;
+    color: white;
+}
+
+#definicion .container {
+
+    padding: 200px 12px;
+
+
+}
+
+#aplicacion-diseño {
+
+
+    background: linear-gradient(0deg,
+            rgb(255, 255, 255),
+            rgb(200, 200, 200),
+            rgb(140, 140, 140));
+    background-size: cover;
+    background-position: center;
+
+}
+
+#aplicacion-diseño .container {
+    text-align: center;
+
+
+
+    padding: 100px 100px;
+}
+
+#aplicacion-diseño p {
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-kerning: 20px;
+
+}
+
+#aplicacion-diseño h2 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+
+    padding-bottom: 60px;
+}
+
+#aplicacion-diseño h3 {
+    color: white;
+    text-align: center;
+
+}
+
+#aplicacion-diseño .carta {
+
+    padding: 40px 40px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    margin: 10px 0px;
+
+
+}
+
+.carta:first-child {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)), url(imagenes/diseño-publicitario-3.png);
+}
+
+.carta:nth-child(2) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)), url(imagenes/composicion-fotografia.jpg);
+}
+
+.carta:nth-child(3) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)), url(imagenes/Ilustracion-digital.jpg);
+}
+
+.carta:nth-child(4) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)), url(imagenes/diseño-editorial.jpg);
+}
+
+.carta:nth-child(5) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)), url(imagenes/mejores-programas-modelado3d.jpg);
+}
+
+
+
+
+
+
+
+#software-diseño .container {
+
+    text-align: center;
+    padding: 100px;
+
+}
+
+#software-diseño p {
+
+    text-align: center;
+    font-weight: bold;
+
+    padding-bottom: 60px;
+
+    color: white;
+}
+
+#software-diseño h2 {
+
+    padding-bottom: 50px;
+}
+
+#software-diseño h3 {
+    color: white;
+}
+
+#software-diseño img {
+
+    height: 100px;
+    width: 100px;
+}
+
+#software-diseño .carta2 {
+    padding: 60px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    margin: 10px 0px;
+
+}
+
+.carta2:first-child {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url(imagenes/adobefondo.png);
+}
+.carta2:first-child:hover{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8)), url(imagenes/adobefondo.png);
+
+}
+.carta2:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url(imagenes/blenderfondo.jpg);
+}
+.carta2:nth-child(2):hover{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8)), url(imagenes/blenderfondo.jpg);
+}
+footer {
+    background-color: whitesmoke;
+    padding-top: 50px;
+}
+
+footer h4 {
+
+    text-align: left;
+    font-size: 30px;
+}
+
+footer p {
+
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+
+
+}
+
+footer a {
+
+    text-decoration: none;
+    color: black;
+
+}
+
+footer a:hover {
+
+    color: rgb(107, 107, 255);
+}
+
+#redes {
+
+
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    font-size: 30px;
+
+
+
+}
+
+
+
+#redes img {
+
+    margin: 0px 10px;
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+
+
+}
