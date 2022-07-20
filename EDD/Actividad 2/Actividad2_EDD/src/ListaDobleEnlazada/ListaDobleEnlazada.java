@@ -10,43 +10,54 @@ package ListaDobleEnlazada;
  */
 public class ListaDobleEnlazada {
 
-    private Nodo primero;
-    private Nodo ultimo;
+    private Nodo ini;
+    private Nodo fin;
 
-    private int numElem;
+    public ListaDobleEnlazada(int[] lista) {
+        System.out.println("Lista enlazada doble");
 
-    public ListaDobleEnlazada() {
-        this.primero = null;
-        this.ultimo = null;
-        this.numElem = 0;
+        this.ini = null;
+        this.fin = null;
+
+        for (int n : lista) {
+
+            Nodo nuevo = new Nodo(n);
+
+            if (this.ini == null) {
+                this.ini = nuevo;
+                this.fin = nuevo;
+
+            } else {
+                nuevo.setAnterior(this.fin);
+                this.fin.setSiguiente(nuevo);
+                this.fin = nuevo;
+
+            }
+
+        }
+
     }
 
-    void insertar(int num) {
+    public void imprimirLista() {
+        System.out.println("Recorre lista hacia adelante");
+		Nodo pNodo = this.ini;
+		while ( pNodo != null ) {
+			System.out.println(pNodo.getNumero());
+			pNodo = pNodo.getSiguiente();
+		} 
 
-        Nodo nuevo = new Nodo(num, null, null);
-        if (primero == null) {
-            primero = nuevo;
-            ultimo = nuevo;
-
-        }
-        else if (primero.getSig()==null){
-         //orden ascendente puntero primero
-        if (primero.getnum()<elem1){
-            primero.setSig(nuevo);
-        }else{
-            nuevo.setSig(primero);
-            primero=nuevo;
-        }
-        //orden descendente puntero último
-        if ( ultimo.getElemento2()>elem2){
-            ultimo.setAnt(nuevo);
-            
-        }else{
-            nuevo.setAnt(ultimo);
-            ultimo=nuevo;
-        }
     }
-
+    
+    
+    public void imprimirListaReverso(){
+    System.out.println("Recorre lista hacia atras");
+		Nodo pNodo = this.fin;
+		while ( pNodo != null ) {
+			System.out.println(pNodo.getNumero());
+			pNodo = pNodo.getAnterior();
+		} 
+    
+    
     }
 
 }

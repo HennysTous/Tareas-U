@@ -16,10 +16,9 @@ public class Nodo {
     public Nodo() {
     }
 
-    public Nodo(int numero, Nodo siguiente, Nodo anterior) {
+    public Nodo(int numero) {
         this.numero = numero;
-        this.siguiente = siguiente;
-        this.anterior = anterior;
+        
     }
 
     public int getNumero() {
@@ -34,16 +33,16 @@ public class Nodo {
         return siguiente;
     }
 
-    public void setSiguiente(Nodo siguiente) {
-        this.siguiente = siguiente;
+    public void setSiguiente(Nodo sig) {
+        this.siguiente = sig;
     }
 
     public Nodo getAnterior() {
         return anterior;
     }
 
-    public void setAnterior(Nodo anterior) {
-        this.anterior = anterior;
+    public void setAnterior(Nodo ant) {
+        this.anterior = ant;
     }
     
     
