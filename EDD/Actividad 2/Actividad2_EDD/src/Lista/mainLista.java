@@ -6,14 +6,10 @@
 package Lista;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
-
 import java.util.List;
 import java.util.Scanner;
-import java.util.function.Predicate;
 
 /**
  *
@@ -32,12 +28,33 @@ public class mainLista {
 
         while (true) {
 
+            
+            
+            System.out.println("Para agregar un nombre a la lista, presione 1");
+            System.out.println("Para saber si la lista esta vacia, presione 2");
+            System.out.println("Para saber contar los elementos de la lista, presione 3");
+            System.out.println("Para buscar un nombre, presione 4");
+            System.out.println("Para obtener el indice de un nombre, presione 5");
+            System.out.println("Para obtener el nombre en un indice, presione 6");
+            System.out.println("Para agregar un nombre al inicio de la lista, presione 7");
+            System.out.println("Para agregar un nombre al final de la lista, presione 8");
+            System.out.println("Para agregar un nombre en cualquier parte de la lista, presione 9");
+            System.out.println("Para eliminar el primer nombre de la lista, presione 10");
+            System.out.println("Para eliminar el ultimo nombre de la lista, presione 11");
+            System.out.println("Para eliminar cualquier nombre de la lista, presione 12");
+            System.out.println("Para agregar varios nombres a la lista, presione 13");
+            System.out.println("Para eliminar varios nombres de la lista, presione 14");
+            System.out.println("Para vaciar la lista, presione 15");
+            System.out.println("Para ordenar la lista ascendentemente, presione 16");
+            System.out.println("Para ordenar la lista descendentemente, presione 17");
+            System.out.println("Para desordenar la lista, presione 18");
+            
             opt = sc.nextInt();
 
             switch (opt) {
                 case 1:
                     //Solo Agregar
-                    System.out.println("Ingrese el nombre del cliente");
+                    System.out.println("Ingrese el nombre");
                     listaSimple.add(new ListaOBJ(sc.next()));
 
                     System.out.println("Nueva lista: ");
