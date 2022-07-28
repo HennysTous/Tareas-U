@@ -29,7 +29,7 @@ CREATE TABLE Profesor
   PRIMARY KEY (CC)
 );
 
-CREATE TABLE Alumno-Examen
+CREATE TABLE Alumno_Examen
 (
   Nota FLOAT,
   Matricula VARCHAR(10) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE Alumno-Examen
   FOREIGN KEY (N) REFERENCES Examen(N) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-CREATE TABLE Alumno-Practica
+CREATE TABLE Alumno_Practica
 (
   Nota FLOAT,
   Fecha DATE,
@@ -50,7 +50,7 @@ CREATE TABLE Alumno-Practica
   FOREIGN KEY (P) REFERENCES Practica(P) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-CREATE TABLE Profesor-Practica
+CREATE TABLE Profesor_Practica
 (
   Fecha DATE,
   P INT NOT NULL,
