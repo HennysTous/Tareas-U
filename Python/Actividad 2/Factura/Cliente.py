@@ -39,11 +39,11 @@ class cliente:
         return self.__tipo_persona
     
     def cliente_dict(self):
-        prod = {
+        cli = {
             "Identificacion" : self.__identificacion,
             "Nombre" : self.__nombre,
             "Direccion" : self.__direccion,
             "Telefono" : self.__telefono,
             "Tipo persona" : self.__tipo_persona
         }
-        return prod
+        return cli
